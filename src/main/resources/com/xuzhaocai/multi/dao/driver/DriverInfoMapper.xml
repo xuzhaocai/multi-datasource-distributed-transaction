@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xuzhaocai.multi.dao.driver.DriverInfoDao" >
+    <update id="updateReceivedOrder">
+        update driver_info set curr_order_id=#{driverInfo.currOrderId}  where id_=#{driverInfo.id}
+    </update>
+    <select id="selectById" resultType="com.xuzhaocai.multi.entity.DriverInfo">
+         select
+          id_ as id,
+          driver_name  as driverName,
+          curr_order_id as currOrderId ,
+          create_time as  createTime
+        from driver_info where id_=#{dirverId}
+    </select>
+</mapper>
